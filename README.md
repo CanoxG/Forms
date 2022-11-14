@@ -8,5 +8,7 @@ In the project directory, you can run:
 
 ### `yarn build`
 
-Examples of Form input states with React
+Examples of Form input states with React Hooks
+
+Very Sinmple Submit Form and a Todo List
 
