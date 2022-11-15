@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 const Submit = () => {
   const [state, setState] = useState({
-    firstName: "",
-    lastName: "",
-    comments: "",
-    isEmployee: false,
+    email: "",
+    password: "",
+    passwordConfirm: "",
+    joinNewsletter: false,
   });
 
   console.log(state);
@@ -21,28 +21,21 @@ const Submit = () => {
     });
   }
 
+  //
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (state.password === state.passwordConfirm) {
+      console.log("Successfully Signed up");
+    } else console.log("Wrong Password or email");
+    if (state.joinNewsletter) {
+      console.log("Thanks for signing up for our Newsletter");
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <fieldset>
-        <legend>Fill The Form</legend>
-        <label htmlFor="name"></label>
-        <input
-          type="text"
-          name="firstName"
-          id="firstName"
-          placeholder="First Name"
-          value={state.firstName}
-          onChange={handleState}
-        />
-        <label htmlFor="lastName"></label>
-        <input
-          type="text"
-          name="lastName"
-          id="lastName"
-          placeholder="Last Name"
-          value={state.lastName}
-          onChange={handleState}
-        />
+        <legend>Sign Up</legend>
         <label htmlFor="email"></label>
         <input
           type="email"
@@ -52,26 +45,35 @@ const Submit = () => {
           value={state.email}
           onChange={handleState}
         />
-        <br/>
-        <textarea
-          value={state.comments}
-          name="comments"
-          placeholder="Comments"
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={state.password}
           onChange={handleState}
         />
-        <br/>
+        <br />
+        <input
+          type="password"
+          name="passwordConfirm"
+          placeholder="Confirm Password"
+          value={state.passwordConfirm}
+          onChange={handleState}
+        />
+        <br />
         {/* Checkbox has no value property use checked property */}
         <input
           className="checkbox"
-          id='isEmployee'
+          id="joinNewsletter"
           type="checkbox"
-          checked={state.isEmployee}
-          name="isEmployee"
+          checked={state.joinNewsletter}
+          name="joinNewsletter"
           onChange={handleState}
         />
-        <label className="employee" htmlFor="isEmployee">
-          Are you Employee ?
+        <label className="newsletter" htmlFor="joinNewsletter">
+          I want to join the newsletter
         </label>
+        <button onSubmit={handleSubmit}>Sign up</button>
       </fieldset>
     </form>
   );

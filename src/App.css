@@ -22,7 +22,7 @@ textarea {
 }
 
 .checkbox {
-  width: 10px;
+  width: 15px;
 }
 
 form {
@@ -40,6 +40,10 @@ fieldset {
 
 button {
   background-color: cyan;
+  margin: 10px 0 0 5px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100px;
 }
 
 input[type="checkbox"] {
@@ -63,6 +67,6 @@ textarea {
   margin: 5px;
 }
 
-.employee {
+.newsletter {
   display: inline;
 }
