@@ -2,19 +2,23 @@
   box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
+.wrapper {
   display: flex;
   align-items: center;
+}
+
+.App {
+  flex-grow: 1;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-left: 15px;
 }
 
 label,
 input,
 button,
 textarea {
-  width: 250px;
+  max-width: 100%;
   display: block;
   margin: 5px;
   border-radius: 5px;
@@ -34,12 +38,12 @@ li {
 }
 
 fieldset {
-  margin: 20px;
   word-wrap: break-word;
 }
 
 button {
-  background-color: cyan;
+  background: linear-gradient(90.41deg, #261f8d 1.14%, #4218da 100%);
+  color: antiquewhite;
   margin: 10px 0 0 5px;
   padding: 5px;
   border-radius: 5px;
@@ -57,7 +61,8 @@ input[type="checkbox"] {
 .line-break {
   height: 100vh;
   width: 5px;
-  background-color: #048ba9;
+  margin: 0 10px 0 10px;
+  background-color: rgb(0, 242, 218);
 }
 
 textarea {
@@ -69,4 +74,9 @@ textarea {
 
 .newsletter {
   display: inline;
+}
+
+.btn {
+  width: 100%;
+  text-align: center;
 }
