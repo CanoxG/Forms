@@ -70,7 +70,7 @@ function Todo() {
           {todos.map((todo, i) => (
             <li key={i}>
               <input
-                className='checkbox'
+                className="checkbox"
                 type="checkbox"
                 checked={todo.done}
                 onChange={editTodo(todo, i)}
