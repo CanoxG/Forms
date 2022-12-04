@@ -37,6 +37,7 @@ function Todo() {
   const editTodo = useCallback(
     (todo, i) => (e) => {
       const copyTodo = [...todos];
+      // Choose index of arr and remove one todo and add an Object
       copyTodo.splice(i, 1, {
         ...todo,
         done: !todo.done,
@@ -48,7 +49,7 @@ function Todo() {
 
   // Closure
   const removeTodo = useCallback(
-    (todo) => (event) => {
+    (todo) => () => {
       setTodos(todos.filter((filteredTodo) => filteredTodo !== todo));
     },
     [todos]
