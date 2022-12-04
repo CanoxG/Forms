@@ -16,12 +16,13 @@ const Submit = () => {
     setState((prev) => {
       return {
         ...prev,
+        // We grab the inbox input from name property
         [name]: type == "checkbox" ? checked : value,
       };
     });
   }
 
-  //
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (state.password === state.passwordConfirm) {
